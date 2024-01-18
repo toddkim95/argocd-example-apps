@@ -14,10 +14,10 @@ spec:
     - host: app1.platform.dongpil.com
       http:
         paths:
-          - path: /test
+          - path: /helm-guestbook
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.paths.backend.serviceName }}
+                name: helm-guestbook
                 port:
-                  number: {{ .Values.paths.backend.servicePort }}
+                  number: 80
