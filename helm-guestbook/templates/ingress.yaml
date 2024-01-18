@@ -4,7 +4,7 @@ metadata:
   name: {{ template "helm-guestbook.fullname" . }}
   namespace: "helm-guestbook"
   annotations:
-    kubernetes.io/ingress.class: {{ .Values.ingress.annotations.kubernetes.io/ingress.class }}
+    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.annotations.alb.ingress.kubernetes.io/scheme }}
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     alb.ingress.kubernetes.io/certificate-arn: {{ .Values.ingress.annotations.alb.ingress.kubernetes.io/certificate-arn }}
