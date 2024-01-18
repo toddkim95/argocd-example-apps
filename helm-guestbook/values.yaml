@@ -12,13 +12,15 @@ image:
 containerPort: 80
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
 
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:247798472664:certificate/2709b783-0cd4-45d7-a9af-6c8ad6b4fc7b
   paths:
     - path: /helm-guestbook
       backend:
