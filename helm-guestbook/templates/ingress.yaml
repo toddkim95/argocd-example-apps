@@ -18,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.service.name }}
+                name: {{ .Values.paths.backend.serviceName }}
                 port:
-                  number: {{ .Values.service.port }}
+                  number: {{ .Values.paths.backend.servicePort }}
